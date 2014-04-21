@@ -1,0 +1,7 @@
+*.dxf
+*.deps
+*.stl
+*.gcode
+intermediate.eps
+mozheart.sublime-project
+mozheart.sublime-workspace
