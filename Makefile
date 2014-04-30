@@ -1,7 +1,7 @@
-all: mozheart_toplid_pegs.stl \
-	mozheart_toplid_emboss.stl \
-	mozheart_body.stl \
-	mozheart_logo.stl
+all: mozlove_toplid_pegs.stl \
+	mozlove_toplid_emboss.stl \
+	mozlove_body.stl \
+	mozlove_logo.stl
 
 clean:
 	rm -f *.stl *.dxf *.deps intermediate.eps
@@ -21,17 +21,17 @@ heart_inset.dxf: heart_inset.svg
 	@pstoedit -dt -f dxf:-polyaslines intermediate.eps heart_inset.dxf
 	@echo "Generated heart_inset.dxf"
 
-mozheart_toplid_pegs.stl: heart.dxf heart_inset.dxf mozheart.scad
-	 openscad -o mozheart_toplid_pegs.stl -d mozheart_toplid_pegs.deps mozheart_toplid.scad
+mozlove_toplid_pegs.stl: heart.dxf heart_inset.dxf mozlove.scad
+	 openscad -o mozlove_toplid_pegs.stl -d mozlove_toplid_pegs.deps mozlove_toplid.scad
 
-mozheart_toplid_emboss.stl: mozilla.dxf heart.dxf heart_inset.dxf mozheart.scad
-	 openscad -D pegs=false -o mozheart_toplid_emboss.stl -d mozheart_toplid_emboss.deps mozheart_toplid.scad
+mozlove_toplid_emboss.stl: mozilla.dxf heart.dxf heart_inset.dxf mozlove.scad
+	 openscad -D pegs=false -o mozlove_toplid_emboss.stl -d mozlove_toplid_emboss.deps mozlove_toplid.scad
 
-mozheart_body.stl: heart.dxf heart_inset.dxf mozheart.scad
-	 openscad -o mozheart_body.stl -d mozheart_body.deps mozheart_body.scad
+mozlove_body.stl: heart.dxf heart_inset.dxf mozlove.scad
+	 openscad -o mozlove_body.stl -d mozlove_body.deps mozlove_body.scad
 
-mozheart_logo.stl: mozilla.dxf mozheart.scad
-	 openscad -o mozheart_logo.stl -d mozheart_logo.deps mozheart_logo.scad
+mozlove_logo.stl: mozilla.dxf mozlove.scad
+	 openscad -o mozlove_logo.stl -d mozlove_logo.deps mozlove_logo.scad
 
 snaps.stl: snaps.scad
 	openscad -o snaps.stl -d snaps.deps snaps.scad

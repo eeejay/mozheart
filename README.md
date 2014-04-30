@@ -1,5 +1,5 @@
-mozheart
-========
+mozlove box
+===========
 
 A Mozilla Heart Box
 
