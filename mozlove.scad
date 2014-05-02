@@ -47,18 +47,18 @@ module top_lid(pegs=true) {
 	color ("red") difference () {
 		union () {
 			difference () {
-				heart(depth=7);
-				translate([0, 0, -0.5]) heart_inset(depth=5.5);
+				heart(depth=8);
+				translate([0, 0, -0.5]) heart_inset(depth=6.5);
 				if (pegs) {
-					translate([0, 7.5, 6]) _pegs(r=1);
+					translate([0, 7.5, 7]) _pegs(r=1);
 				} else {
-					translate([0, 7.5, 6]) mozilla(pegs=false);
+					translate([0, 7.5, 7]) mozilla(pegs=false);
 				}
 			}
 			//translate([0,-21.5,0]) pinplace();
-			translate([-3.5, 13.5, 0]) cube([7,7,6]);
+			translate([-3.5, 13.5, 0]) cube([7,7,7.5]);
 			translate([0,-20,2]) rotate([0,180,0]) pin(h=21);
-			translate([0,-20,0]) cylinder(r=7.25, h=6);
+			translate([0,-20,0]) cylinder(r=7.25, h=7.5);
 		}
 		translate([-2.75,14.25,-0.5]) cube([5.5,5.5,6]);
 	}
