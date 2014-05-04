@@ -50,7 +50,7 @@ module top_lid(pegs=true) {
 				heart(depth=8);
 				translate([0, 0, -0.5]) heart_inset(depth=6.5);
 				if (pegs) {
-					translate([0, 7.5, 7]) _pegs(r=1);
+					translate([0, 7.5, 7]) _pegs(r=1.1);
 				} else {
 					translate([0, 7.5, 7]) mozilla(pegs=false);
 				}
@@ -80,10 +80,6 @@ module box_body() {
 	}
 }
 
-//box_body();
-top_lid();
-//translate([-25,2,36]) mozilla(height=4);
-//mozilla();
-
-//experiment();
-//translate([-25, -45, 0])  mozilla(height=5);
+box_body();
+translate([0,0,30]) top_lid();
+translate([0, 7.5, 38]) mozilla(height=3);
