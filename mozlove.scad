@@ -24,6 +24,7 @@ module mozilla(h=4, pegs=true) {
 	union () {
 		color("white") translate([width/-2,height/-2,0]) linear_extrude(height = h, convexity = 10)
 		resize(newsize=[width,height,0])
+                scale(0.1)
 		import (file = "mozilla.dxf");
 		if (pegs) {
 			translate([0,0,-1])  _pegs();
@@ -34,12 +35,14 @@ module mozilla(h=4, pegs=true) {
 module heart(width=70.25, height=58.25, depth=15) {
 	linear_extrude(height = depth, convexity = 10)
 	translate([width/-2, height/-2, 0]) resize(newsize=[width,height,0])
+        scale(0.01)
 	import (file = "heart.dxf");
 }
 
 module heart_inset(width=65.775, height=53.581, depth=15) {
 	linear_extrude(height = depth, convexity = 10)
 	translate([width/-2, height/-2, 0]) resize(newsize=[width,height,0])
+        scale(0.01)
 	import (file = "heart_inset.dxf");
 }
 
